@@ -1,6 +1,6 @@
 import React from "react";
 
-const DestinationsList = () => {
+const DestinationsList = ({ destinations }) => {
 
   return (
     <div className="DestinationsList">
