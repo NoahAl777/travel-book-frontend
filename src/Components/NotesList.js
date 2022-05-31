@@ -4,7 +4,7 @@ const NotesList = ({ notes }) => {
   console.log(notes)
   const noteCards = notes.map(note => {
     return (
-      <div className="noteCard">
+      <div className="noteCard" key={note.id}>
         <h4>{`🙌${note.overall_rating} - Overall | 🥧${note.food_rating} - Food | 👮‍♂️${note.safety_rating} - Safety`}</h4>
       </div>
     )
