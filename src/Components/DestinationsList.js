@@ -6,7 +6,7 @@ const DestinationsList = ({ destinations }) => {
     return (
       <div className="DestinationCard" key={destination.id}>
         <h2>{`${destination.city}, ${destination.country} - ${destination.state_province}`}</h2>
-        <img src={`${destination.image}`}></img>
+        <img src={`${destination.image}`} width="1200" height="800"></img>
       </div>
     )
   })
