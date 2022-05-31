@@ -4,7 +4,7 @@ const NotesList = () => {
 
   return (
     <div className="NotesList">
-      <h4>NotesList Component</h4>
+      <h3>NotesList Component</h3>
     </div>
   )
 };
