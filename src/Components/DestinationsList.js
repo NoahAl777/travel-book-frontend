@@ -8,7 +8,7 @@ const DestinationsList = ({ destinations }) => {
       <div className="DestinationCard" key={destination.id}>
         <h2>{`${destination.city}, ${destination.country} - ${destination.state_province}`}</h2>
         <img src={`${destination.image}`} width="1200" height="800"></img>
-        <NotesList />
+        <NotesList notes={destination.notes} />
       </div>
     )
   })
