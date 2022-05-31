@@ -4,11 +4,12 @@ import React, { useState, useEffect } from 'react';
 import DestinationsList from './Components/DestinationsList';
 
 function App() {
+  const [destinations, setDestinations] = useState()
 
   useEffect(() => {
     fetch("http://localhost:9292/destinations")
       .then(r => r.json())
-      .then(console.log)
+      .then(data => setDestinations(data))
   }, [])
 
   return (
