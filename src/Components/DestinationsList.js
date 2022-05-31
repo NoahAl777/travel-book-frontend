@@ -2,9 +2,18 @@ import React from "react";
 
 const DestinationsList = ({ destinations }) => {
 
+  let destinationCards = destinations.map(destination => {
+    return (
+      <div className="DestinationCard" key={destination.id}>
+        <h2>{`${destination.city}, ${destination.country} - ${destination.state_province}`}</h2>
+        <img src={`${destination.image}`}></img>
+      </div>
+    )
+  })
   return (
     <div className="DestinationsList">
       <h2>DestinationsList Component</h2>
+      {destinationCards}
     </div>
   )
 };
