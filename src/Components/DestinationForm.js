@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const DestinationForm = () => {
-
+  const [formData, setFormData] = useState({ country: "", state_province: "", city: "", zipcode: "", image: "" })
   const handleSubmit = (event) => {
     event.preventDefault()
     console.log(event)
