@@ -5,7 +5,12 @@ const NavBar = () => {
 
   return (
     <div className="NavBar">
-      NavBar Component
+      <Link to="/">
+        <button className="HomeButton">Home</button>
+      </Link>
+      <Link to="/destinations/new">
+        <button className="NewDestination">New Destination</button>
+      </Link>
     </div>
   )
 };
