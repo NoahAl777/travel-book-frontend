@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import NavBar from './Components/NavBar';
 import DestinationsList from './Components/DestinationsList';
+import DestinationForm from './Components/DestinationForm';
 
 function App() {
   const [destinations, setDestinations] = useState([])
@@ -19,6 +20,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<DestinationsList destinations={destinations} />} />
+        <Route path="/destinations/new" element={<DestinationForm />} />
       </Routes>
     </div>
   );
