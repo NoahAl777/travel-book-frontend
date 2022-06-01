@@ -9,9 +9,16 @@ const DestinationForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(event)
+    console.log(formData)
+    fetch("http://localhost:9292/destinations", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
   }
-  console.log(formData)
+
   return (
     <div className="DestinationForm">
       <form onSubmit={handleSubmit}>
