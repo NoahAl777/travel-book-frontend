@@ -4,14 +4,14 @@ const DestinationForm = () => {
   const [formData, setFormData] = useState({ country: "", state_province: "", city: "", zipcode: "", image: "" })
 
   const handleChange = (event) => {
-    console.log(event.target.value)
+    setFormData({ ...formData, [event.target.id]: event.target.value })
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
     console.log(event)
   }
-
+  console.log(formData)
   return (
     <div className="DestinationForm">
       <form onSubmit={handleSubmit}>
