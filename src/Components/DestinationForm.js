@@ -20,6 +20,7 @@ const DestinationForm = () => {
         <label>Image URL:</label>
         <input type="text" id=""></input>
         <br />
+        <input type="submit"></input>
       </form>
     </div>
   )
