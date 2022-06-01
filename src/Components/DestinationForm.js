@@ -2,9 +2,14 @@ import React from "react";
 
 const DestinationForm = () => {
 
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(event)
+  }
+
   return (
     <div className="DestinationForm">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Country:</label>
         <input type="text" id=""></input>
         <br />
