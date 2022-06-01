@@ -14,7 +14,7 @@ const NotesList = ({ notes }) => {
 
   return (
     <div className="NotesList">
-      <h3>NotesList Component</h3>
+      <h3>Important Notes</h3>
       {noteCards}
     </div>
   )
