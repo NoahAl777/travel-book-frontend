@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const NotesList = ({ notes }) => {
-  console.log(notes)
   const noteCards = notes.map(note => {
     return (
       <div className="noteCard" key={note.id}>
