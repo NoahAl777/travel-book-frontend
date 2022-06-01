@@ -4,7 +4,23 @@ const DestinationForm = () => {
 
   return (
     <div className="DestinationForm">
-      Destination Form Component
+      <form>
+        <label>Country:</label>
+        <input type="text" id=""></input>
+        <br />
+        <label>City:</label>
+        <input type="text" id=""></input>
+        <br />
+        <label>State/Province:</label>
+        <input type="text" id=""></input>
+        <br />
+        <label>Zipcode:</label>
+        <input type="integer" id=""></input>
+        <br />
+        <label>Image URL:</label>
+        <input type="text" id=""></input>
+        <br />
+      </form>
     </div>
   )
 };
