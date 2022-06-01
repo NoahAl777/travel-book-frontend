@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from "react-router-dom";
 import DestinationsList from './Components/DestinationsList';
 
 function App() {
@@ -14,7 +15,9 @@ function App() {
 
   return (
     <div className="App">
-      <DestinationsList destinations={destinations} />
+      <Routes>
+        <Route path="/" element={<DestinationsList destinations={destinations} />} />
+      </Routes>
     </div>
   );
 }
