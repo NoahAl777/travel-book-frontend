@@ -23,19 +23,19 @@ const DestinationForm = () => {
     <div className="DestinationForm">
       <form onSubmit={handleSubmit}>
         <label>Country:</label>
-        <input type="text" id="country" onChange={handleChange}></input>
+        <input type="text" id="country" onChange={handleChange} value={formData.country}></input>
         <br />
         <label>City:</label>
-        <input type="text" id="city" onChange={handleChange}></input>
+        <input type="text" id="city" onChange={handleChange} value={formData.city}></input>
         <br />
         <label>State/Province:</label>
-        <input type="text" id="state_province" onChange={handleChange}></input>
+        <input type="text" id="state_province" onChange={handleChange} value={formData.state_province}></input>
         <br />
         <label>Zipcode:</label>
-        <input type="integer" id="zipcode" onChange={handleChange}></input>
+        <input type="integer" id="zipcode" onChange={handleChange} value={formData.zipcode}></input>
         <br />
         <label>Image URL:</label>
-        <input type="text" id="image" onChange={handleChange}></input>
+        <input type="text" id="image" onChange={handleChange} value={formData.image}></input>
         <br />
         <input type="submit"></input>
       </form>
