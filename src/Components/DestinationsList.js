@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 
 const DestinationsList = ({ destinations, setSelectedDestination }) => {
 
+  const handleSelection = (destination) => {
+    setSelectedDestination(destination)
+  }
+
   let destinationCards = destinations.map(destination => {
     return (
       <div className="DestinationCard" key={destination.id}>
@@ -11,7 +15,7 @@ const DestinationsList = ({ destinations, setSelectedDestination }) => {
         <img src={`${destination.image}`} width="1200" height="800"></img>
         <br />
         <Link to={`/destinations/${destination.id}/edit`}>
-          <button>Edit Destination</button>
+          <button onClick={() => handleSelection(destination)}>Edit Destination</button>
         </Link>
         <Link to={`/destinations/${destination.id}/notes/new`}>
           <button>Add Note</button>

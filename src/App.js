@@ -18,6 +18,7 @@ function App() {
       .then(data => setDestinations(data))
   }, [])
 
+  console.log(selectedDestination)
   return (
     <div className="App">
       <NavBar />
