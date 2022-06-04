@@ -10,6 +10,7 @@ import EditDestinationsForm from './Components/EditDestinationsForm';
 
 function App() {
   const [destinations, setDestinations] = useState([])
+  const [selectedDestination, setSelectedDestination] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:9292/destinations")
@@ -21,7 +22,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<DestinationsList destinations={destinations} />} />
+        <Route path="/" element={<DestinationsList destinations={destinations} setSelectedDestination={setSelectedDestination} />} />
         <Route path="/destinations/new" element={<DestinationForm />} />
         <Route path="/destinations/:destination_id/edit" element={<EditDestinationsForm />} />
         <Route path="/destinations/:destination_id/notes/new" element={<NotesForm />} />

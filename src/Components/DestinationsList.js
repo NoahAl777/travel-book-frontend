@@ -2,7 +2,7 @@ import React from "react";
 import NotesList from "./NotesList";
 import { Link } from "react-router-dom";
 
-const DestinationsList = ({ destinations }) => {
+const DestinationsList = ({ destinations, setSelectedDestination }) => {
 
   let destinationCards = destinations.map(destination => {
     return (
