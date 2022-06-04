@@ -9,6 +9,10 @@ const DestinationsList = ({ destinations }) => {
       <div className="DestinationCard" key={destination.id}>
         <h2>{`${destination.city}, ${destination.country} - ${destination.state_province}  (${destination.zipcode})`}</h2>
         <img src={`${destination.image}`} width="1200" height="800"></img>
+        <br />
+        <Link to={`/destinations/${destination.id}/edit`}>
+          <button>Edit Destination</button>
+        </Link>
         <Link to={`/destinations/${destination.id}/notes/new`}>
           <button>Add Note</button>
         </Link>
