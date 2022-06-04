@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const EditDestinationsForm = ({ selectedDestination }) => {
-  const { country, state_province, city, zipcode, image } = selectedDestination
+  const { id, country, state_province, city, zipcode, image } = selectedDestination
   const [formData, setFormData] = useState({ country: country, state_province: state_province, city: city, zipcode: zipcode, image: image })
 
   const handleChange = (event) => {
@@ -10,7 +10,13 @@ const EditDestinationsForm = ({ selectedDestination }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(formData)
+    fetch(`http://localhost:9292/destinations/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
   }
 
   return (
