@@ -5,11 +5,12 @@ const EditDestinationsForm = ({ selectedDestination }) => {
   const [formData, setFormData] = useState({ country: country, state_province: state_province, city: city, zipcode: zipcode, image: image })
 
   const handleChange = (event) => {
-    console.log(formData)
+    setFormData({ ...formData, [event.target.id]: event.target.value })
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    console.log(formData)
   }
 
   return (
