@@ -1,7 +1,8 @@
 import React from "react";
 
-const EditDestinationsForm = () => {
+const EditDestinationsForm = ({ selectedDestination }) => {
 
+  console.log(selectedDestination)
   return (
     <div className="EditDestinationsForm">
       Edit Destinations Form Component

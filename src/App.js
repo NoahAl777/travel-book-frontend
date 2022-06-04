@@ -18,14 +18,13 @@ function App() {
       .then(data => setDestinations(data))
   }, [])
 
-  console.log(selectedDestination)
   return (
     <div className="App">
       <NavBar />
       <Routes>
         <Route path="/" element={<DestinationsList destinations={destinations} setSelectedDestination={setSelectedDestination} />} />
         <Route path="/destinations/new" element={<DestinationForm />} />
-        <Route path="/destinations/:destination_id/edit" element={<EditDestinationsForm />} />
+        <Route path="/destinations/:destination_id/edit" element={<EditDestinationsForm selectedDestination={selectedDestination} />} />
         <Route path="/destinations/:destination_id/notes/new" element={<NotesForm />} />
       </Routes>
     </div>
