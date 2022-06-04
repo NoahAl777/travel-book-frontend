@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<DestinationsList destinations={destinations} />} />
         <Route path="/destinations/new" element={<DestinationForm />} />
-        <Route path="/destinations/:destination_id/edit" element={<EditDestinationsForm />} />
+        <Route path="/destinations/:destination_id/edit" element={<EditDestinationsForm destinations={destinations} />} />
         <Route path="/destinations/:destination_id/notes/new" element={<NotesForm />} />
       </Routes>
     </div>

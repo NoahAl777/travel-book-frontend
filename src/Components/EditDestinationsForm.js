@@ -1,6 +1,6 @@
 import React from "react";
 
-const EditDestinationsForm = () => {
+const EditDestinationsForm = ({ destinations }) => {
 
   return (
     <div className="EditDestinationsForm">
