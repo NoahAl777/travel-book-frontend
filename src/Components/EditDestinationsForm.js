@@ -5,11 +5,13 @@ const EditDestinationsForm = ({ destinations }) => {
   const params = useParams()
   const [selectedDestination, setSelectedDestination] = useState(destinations.filter((destination) => destination.id == params.destination_id))
 
-  console.log(selectedDestination)
+  const handleSubmit = (event) => {
+    event.preventDefault()
+  };
 
   return (
     <div className="EditDestinationsForm">
-      <form >
+      <form onSubmit={handleSubmit}>
         <label>Country:</label>
         <input type="text" id="country" value={selectedDestination[0].country}></input>
         <br />
