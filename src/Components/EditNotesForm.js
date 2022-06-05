@@ -1,6 +1,6 @@
 import React from "react";
 
-const EditNotesForm = () => {
+const EditNotesForm = ({ selectedNote }) => {
 
   return (
     <div className="EditNotesForm">
