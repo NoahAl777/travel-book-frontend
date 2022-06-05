@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NotesList = ({ notes, setSelectedNote }) => {
+
+  const handleClick = (note) => {
+    setSelectedNote(note)
+  }
+
   const noteCards = notes.map(note => {
     return (
       <div className="noteCard" key={note.id}>
@@ -9,7 +14,7 @@ const NotesList = ({ notes, setSelectedNote }) => {
         <p>Must do: {`${note.must_do}`}</p>
         <p>More: {`${note.additional_notes}`}</p>
         <Link to={`/destinations/${note.destination_id}/notes/${note.id}/edit`}>
-          <button>Edit Note</button>
+          <button onClick={() => handleClick(note)}>Edit Note</button>
         </Link>
       </div>
     )
