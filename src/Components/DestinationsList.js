@@ -8,6 +8,13 @@ const DestinationsList = ({ destinations, setSelectedDestination, setSelectedNot
     setSelectedDestination(destination)
   }
 
+  const handleDelete = (destination) => {
+    console.log(destination)
+    fetch(`http://localhost:9292/destinations/${destination.id}`, {
+      method: "DELETE"
+    })
+  }
+
   let destinationCards = destinations.map(destination => {
     return (
       <div className="DestinationCard" key={destination.id}>
@@ -17,6 +24,7 @@ const DestinationsList = ({ destinations, setSelectedDestination, setSelectedNot
         <Link to={`/destinations/${destination.id}/edit`}>
           <button onClick={() => handleSelection(destination)}>Edit Destination</button>
         </Link>
+        <button onClick={() => handleDelete(destination)}>Delete</button>
         <Link to={`/destinations/${destination.id}/notes/new`}>
           <button>Add Note</button>
         </Link>
