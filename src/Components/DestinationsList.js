@@ -2,7 +2,7 @@ import React from "react";
 import NotesList from "./NotesList";
 import { Link } from "react-router-dom";
 
-const DestinationsList = ({ destinations, setSelectedDestination }) => {
+const DestinationsList = ({ destinations, setSelectedDestination, setSelectedNote }) => {
 
   const handleSelection = (destination) => {
     setSelectedDestination(destination)
@@ -20,7 +20,7 @@ const DestinationsList = ({ destinations, setSelectedDestination }) => {
         <Link to={`/destinations/${destination.id}/notes/new`}>
           <button>Add Note</button>
         </Link>
-        <NotesList notes={destination.notes} />
+        <NotesList notes={destination.notes} setSelectedNote={setSelectedNote} />
       </div>
     )
   })

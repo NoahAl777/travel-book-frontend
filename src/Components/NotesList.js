@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NotesList = ({ notes }) => {
+const NotesList = ({ notes, setSelectedNote }) => {
   const noteCards = notes.map(note => {
-    console.log(note)
     return (
       <div className="noteCard" key={note.id}>
         <h4>{`🙌${note.overall_rating} - Overall | 🥧${note.food_rating} - Food | 👮‍♂️${note.safety_rating} - Safety`}</h4>

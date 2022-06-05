@@ -10,8 +10,9 @@ import NotesForm from './Components/NotesForm';
 import EditNotesForm from './Components/EditNotesForm';
 
 function App() {
-  const [destinations, setDestinations] = useState([])
-  const [selectedDestination, setSelectedDestination] = useState([])
+  const [destinations, setDestinations] = useState([]);
+  const [selectedDestination, setSelectedDestination] = useState([]);
+  const [selectedNote, setSelectedNote] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:9292/destinations")
@@ -23,7 +24,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<DestinationsList destinations={destinations} setSelectedDestination={setSelectedDestination} />} />
+        <Route path="/" element={<DestinationsList destinations={destinations} setSelectedDestination={setSelectedDestination} setSelectedNote={setSelectedNote} />} />
         <Route path="/destinations/new" element={<DestinationForm />} />
         <Route path="/destinations/:destination_id/edit" element={<EditDestinationsForm selectedDestination={selectedDestination} />} />
         <Route path="/destinations/:destination_id/notes/new" element={<NotesForm />} />
