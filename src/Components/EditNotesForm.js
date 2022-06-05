@@ -4,8 +4,8 @@ const EditNotesForm = ({ selectedNote }) => {
   const { id, overall_rating, safety_rating, food_rating, must_do, additional_notes } = selectedNote
   const [formData, setFormData] = useState({ overall_rating: overall_rating, safety_rating: safety_rating, food_rating: food_rating, must_do: must_do, additional_notes: additional_notes })
 
-  const handleChange = () => {
-
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.id]: event.target.value })
   }
 
   const handleSubmit = (event) => {
