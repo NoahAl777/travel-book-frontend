@@ -16,6 +16,7 @@ const NotesList = ({ notes, setSelectedNote }) => {
         <Link to={`/destinations/${note.destination_id}/notes/${note.id}/edit`}>
           <button onClick={() => handleClick(note)}>Edit Note</button>
         </Link>
+        <button>Delete</button>
       </div>
     )
   })
