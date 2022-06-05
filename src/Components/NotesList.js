@@ -7,6 +7,12 @@ const NotesList = ({ notes, setSelectedNote }) => {
     setSelectedNote(note)
   }
 
+  const handleDelete = (note) => {
+    fetch(`http://localhost:9292/notes/${note.id}`, {
+      method: "DELETE"
+    })
+  }
+
   const noteCards = notes.map(note => {
     return (
       <div className="noteCard" key={note.id}>
@@ -16,7 +22,7 @@ const NotesList = ({ notes, setSelectedNote }) => {
         <Link to={`/destinations/${note.destination_id}/notes/${note.id}/edit`}>
           <button onClick={() => handleClick(note)}>Edit Note</button>
         </Link>
-        <button>Delete</button>
+        <button onClick={() => handleDelete(note)}>Delete</button>
       </div>
     )
   })
