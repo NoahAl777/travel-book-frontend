@@ -28,7 +28,7 @@ function App() {
         <Route path="/destinations/new" element={<DestinationForm />} />
         <Route path="/destinations/:destination_id/edit" element={<EditDestinationsForm selectedDestination={selectedDestination} />} />
         <Route path="/destinations/:destination_id/notes/new" element={<NotesForm />} />
-        <Route path="/destinations/:destination_id/notes/:notes_id/edit" element={<EditNotesForm selectedNote={selectedNote} />} />
+        <Route path="/destinations/:destination_id/notes/:note_id/edit" element={<EditNotesForm selectedNote={selectedNote} />} />
       </Routes>
     </div>
   );

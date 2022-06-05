@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
 const EditNotesForm = ({ selectedNote }) => {
-  const params = useParams;
+  const params = useParams();
   const { id, overall_rating, safety_rating, food_rating, must_do, additional_notes, destination_id } = selectedNote;
   const [formData, setFormData] = useState({ overall_rating: overall_rating, safety_rating: safety_rating, food_rating: food_rating, must_do: must_do, additional_notes: additional_notes });
 
@@ -12,6 +12,13 @@ const EditNotesForm = ({ selectedNote }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    fetch(`http://localhost:9292/notes/${params.note_id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
   }
 
   return (
