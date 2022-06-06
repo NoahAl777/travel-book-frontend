@@ -31,6 +31,7 @@ const DestinationForm = ({ destinations, setDestinations }) => {
       setDestinations([...destinations, formData])
       setFormData({ country: "", state_province: "", city: "", zipcode: "", image: "" })
       setErrors()
+      navigate("/")
     }
   }
 
