@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const DestinationForm = ({ destinations, setDestinations }) => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({ country: "", state_province: "", city: "", zipcode: "", image: "" })
   const [errors, setErrors] = useState([])
 
