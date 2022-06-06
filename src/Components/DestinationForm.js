@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const DestinationForm = () => {
+const DestinationForm = ({ destinations, setDestinations }) => {
   const [formData, setFormData] = useState({ country: "", state_province: "", city: "", zipcode: "", image: "" })
 
   const handleChange = (event) => {
