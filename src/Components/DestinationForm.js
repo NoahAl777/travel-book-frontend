@@ -38,7 +38,7 @@ const DestinationForm = ({ destinations, setDestinations }) => {
   return (
     <div className="DestinationForm">
       <h2>Create a New Destination</h2>
-      <h4>{errors}</h4>
+      <h4 style={{ color: 'red' }}>{errors}</h4>
       <form onSubmit={handleSubmit}>
         <label>Country:</label>
         <input type="text" id="country" onChange={handleChange} value={formData.country}></input>
