@@ -27,6 +27,7 @@ const DestinationForm = ({ destinations, setDestinations }) => {
       setErrors(data.errors)
     } else {
       setDestinations([...destinations, formData])
+      setFormData({ country: "", state_province: "", city: "", zipcode: "", image: "" })
     }
   }
 
