@@ -13,6 +13,11 @@ const DestinationsList = ({ destinations, setDestinations, setSelectedDestinatio
     fetch(`http://localhost:9292/destinations/${destination.id}`, {
       method: "DELETE"
     })
+      .then(handleUpdateDestinationsList(destination))
+  }
+
+  const handleUpdateDestinationsList = (destination) => {
+    setDestinations(destinations.filter((d) => d != destination))
   }
 
   let destinationCards = destinations.map(destination => {
