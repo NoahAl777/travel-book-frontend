@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const DestinationForm = ({ destinations, setDestinations }) => {
   const [formData, setFormData] = useState({ country: "", state_province: "", city: "", zipcode: "", image: "" })
+  const [errors, setErrors] = useState([])
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value })
@@ -17,6 +18,16 @@ const DestinationForm = ({ destinations, setDestinations }) => {
       },
       body: JSON.stringify(formData)
     })
+      .then(r => r.json())
+      .then(data => handleUpdateDestinationsList(data))
+  }
+
+  const handleUpdateDestinationsList = (data) => {
+    if (data.errors != undefined) {
+      setErrors(data.errors)
+    } else {
+      setDestinations([...destinations, formData])
+    }
   }
 
   return (
