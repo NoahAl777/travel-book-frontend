@@ -2,7 +2,7 @@ import React from "react";
 import NotesList from "./NotesList";
 import { Link } from "react-router-dom";
 
-const DestinationsList = ({ destinations, setSelectedDestination, setSelectedNote }) => {
+const DestinationsList = ({ destinations, setDestinations, setSelectedDestination, setSelectedNote }) => {
 
   const handleSelection = (destination) => {
     setSelectedDestination(destination)
