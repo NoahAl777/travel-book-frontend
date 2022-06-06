@@ -34,6 +34,7 @@ const DestinationForm = ({ destinations, setDestinations }) => {
 
   return (
     <div className="DestinationForm">
+      <h2>Create a New Destination</h2>
       <h4>{errors}</h4>
       <form onSubmit={handleSubmit}>
         <label>Country:</label>
