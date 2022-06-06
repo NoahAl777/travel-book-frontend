@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-const NotesForm = () => {
+const NotesForm = ({ destinations, setDestinations }) => {
   const params = useParams()
   const [formData, setFormData] = useState({ overall_rating: "", safety_rating: "", food_rating: "", must_do: "", additional_notes: "" })
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value })
   }
-  console.log(params.destination_id)
+
   const handleSubmit = (event) => {
     event.preventDefault()
     console.log(formData)
