@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 const NotesForm = ({ destinations, setDestinations }) => {
   const params = useParams()
+  const navigate = useNavigate()
   const [errors, setErrors] = useState()
   const [formData, setFormData] = useState({ overall_rating: "", safety_rating: "", food_rating: "", must_do: "", additional_notes: "" })
 
@@ -44,6 +45,7 @@ const NotesForm = ({ destinations, setDestinations }) => {
     setDestinations(updatedDestinationsList)
     setErrors()
     setFormData({ overall_rating: "", safety_rating: "", food_rating: "", must_do: "", additional_notes: "" })
+    navigate('/')
   }
 
   return (
