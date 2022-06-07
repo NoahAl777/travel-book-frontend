@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 const NotesForm = ({ destinations, setDestinations }) => {
   const params = useParams()
+  const [errors, setErrors] = useState()
   const [formData, setFormData] = useState({ overall_rating: "", safety_rating: "", food_rating: "", must_do: "", additional_notes: "" })
 
   const handleChange = (event) => {
@@ -10,7 +11,6 @@ const NotesForm = ({ destinations, setDestinations }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(formData)
     fetch(`http://localhost:9292/destinations/${params.destination_id}/notes`, {
       method: "POST",
       headers: {
@@ -18,7 +18,16 @@ const NotesForm = ({ destinations, setDestinations }) => {
       },
       body: JSON.stringify(formData)
     })
-      .then(handleUpdateNotesList)
+      .then(r => r.json())
+      .then(data => checkForErrors(data))
+  }
+
+  const checkForErrors = (data) => {
+    if (data.errors != undefined) {
+      setErrors(data.errors)
+    } else {
+      handleUpdateNotesList()
+    }
   }
 
   const handleUpdateNotesList = () => {
@@ -33,10 +42,12 @@ const NotesForm = ({ destinations, setDestinations }) => {
       }
     })
     setDestinations(updatedDestinationsList)
+    setErrors()
   }
 
   return (
     <div className="NotesForm">
+      <h4 style={{ color: 'red' }}>{errors}</h4>
       <form onSubmit={handleSubmit}>
         <label>Overall Rating:</label>
         <input type="number" id="overall_rating" onChange={handleChange} value={formData.overall_rating}></input>
