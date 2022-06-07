@@ -43,6 +43,7 @@ const NotesForm = ({ destinations, setDestinations }) => {
     })
     setDestinations(updatedDestinationsList)
     setErrors()
+    setFormData({ overall_rating: "", safety_rating: "", food_rating: "", must_do: "", additional_notes: "" })
   }
 
   return (
