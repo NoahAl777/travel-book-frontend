@@ -18,6 +18,21 @@ const NotesForm = ({ destinations, setDestinations }) => {
       },
       body: JSON.stringify(formData)
     })
+      .then(handleUpdateNotesList)
+  }
+
+  const handleUpdateNotesList = () => {
+    let destination = [...destinations].find((destination) => destination.id == params.destination_id)
+    let updatedNotes = [...destination.notes, formData]
+    let updatedDestination = { ...destination, notes: updatedNotes }
+    let updatedDestinationsList = [...destinations].map((d) => {
+      if (d.id == params.destination_id) {
+        return updatedDestination
+      } else {
+        return d
+      }
+    })
+    setDestinations(updatedDestinationsList)
   }
 
   return (
