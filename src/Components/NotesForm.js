@@ -64,7 +64,7 @@ const NotesForm = ({ destinations, setDestinations }) => {
         <label>Must Do:</label>
         <input type="text" id="must_do" onChange={handleChange} value={formData.must_do}></input>
         <br />
-        <label>More:</label>
+        <label>Additional Notes:</label>
         <input type="text" id="additional_notes" onChange={handleChange} value={formData.additional_notes}></input>
         <br />
         <input type="submit"></input>
