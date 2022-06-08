@@ -37,6 +37,7 @@ const DestinationsList = ({ destinations, setDestinations, setSelectedDestinatio
       </div>
     )
   })
+
   return (
     <div className="DestinationsList">
       <h2>DestinationsList Component</h2>

@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const EditDestinationsForm = ({ selectedDestination }) => {
+  const params = useParams()
   const { id, country, state_province, city, zipcode, image } = selectedDestination
   const [formData, setFormData] = useState({ country: country, state_province: state_province, city: city, zipcode: zipcode, image: image })
+
+  useEffect(() => {
+    if (selectedDestination == false) {
+      fetch(`http://localhost:9292/destinations/${params.destination_id}`)
+        .then(r => r.json())
+        .then(data => {
+          const { country, state_province, city, zipcode, image } = data
+          setFormData({ country: country, state_province: state_province, city: city, zipcode: zipcode, image: image })
+        })
+    }
+  }, [])
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value })
   }
-
   const handleSubmit = (event) => {
     event.preventDefault()
     fetch(`http://localhost:9292/destinations/${id}`, {
