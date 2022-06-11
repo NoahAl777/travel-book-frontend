@@ -13,6 +13,7 @@ function App() {
   const [destinations, setDestinations] = useState([]);
   const [selectedDestination, setSelectedDestination] = useState([]);
   const [selectedNote, setSelectedNote] = useState([]);
+  const [notes, setNotes] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:9292/destinations")
