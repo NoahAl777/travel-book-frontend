@@ -33,7 +33,7 @@ const DestinationsList = ({ destinations, setDestinations, setSelectedDestinatio
         <Link to={`/destinations/${destination.id}/notes/new`}>
           <button>Add Note</button>
         </Link>
-        <NotesList notes={destination.notes} setSelectedNote={setSelectedNote} />
+        <NotesList notes={notes.filter(note => note.destination_id == destination.id)} setSelectedNote={setSelectedNote} />
       </div>
     )
   })
