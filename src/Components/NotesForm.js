@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-const NotesForm = ({ destinations, setDestinations }) => {
+const NotesForm = ({ destinations, setDestinations, notes, setNotes }) => {
   const params = useParams()
   const navigate = useNavigate()
   const [errors, setErrors] = useState()
