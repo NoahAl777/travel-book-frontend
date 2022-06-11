@@ -18,7 +18,13 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:9292/destinations")
       .then(r => r.json())
-      .then(data => setDestinations(data))
+      .then(data => { setDestinations(data) })
+  }, [])
+
+  useEffect(() => {
+    fetch("http://localhost:9292/notes")
+      .then(r => r.json())
+      .then(data => { setNotes(data) })
   }, [])
 
   return (
