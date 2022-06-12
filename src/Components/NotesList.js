@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const NotesList = ({ notes = [], setSelectedNote }) => {
+const NotesList = ({ notes, setSelectedNote }) => {
 
   const handleClick = (note) => {
     setSelectedNote(note)

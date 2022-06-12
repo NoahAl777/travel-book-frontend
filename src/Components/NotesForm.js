@@ -32,17 +32,8 @@ const NotesForm = ({ destinations, setDestinations, notes, setNotes }) => {
   }
 
   const handleUpdateNotesList = () => {
-    let destination = [...destinations].find((destination) => destination.id == params.destination_id)
-    let updatedNotes = [...destination.notes, formData]
-    let updatedDestination = { ...destination, notes: updatedNotes }
-    let updatedDestinationsList = [...destinations].map((d) => {
-      if (d.id == params.destination_id) {
-        return updatedDestination
-      } else {
-        return d
-      }
-    })
-    setDestinations(updatedDestinationsList)
+    let newNote = { ...formData, destination_id: parseInt(params.destination_id) }
+    setNotes([...notes, newNote])
     setErrors()
     setFormData({ overall_rating: "", safety_rating: "", food_rating: "", must_do: "", additional_notes: "" })
     navigate('/')
