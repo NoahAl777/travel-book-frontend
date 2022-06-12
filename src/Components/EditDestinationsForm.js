@@ -5,6 +5,7 @@ const EditDestinationsForm = ({ selectedDestination }) => {
   const params = useParams()
   const { id, country, state_province, city, zipcode, image } = selectedDestination
   const [formData, setFormData] = useState({ country: country, state_province: state_province, city: city, zipcode: zipcode, image: image })
+  const [errors, setErrors] = useState()
 
   useEffect(() => {
     if (selectedDestination == false) {
