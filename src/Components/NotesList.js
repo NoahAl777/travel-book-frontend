@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const NotesList = ({ notes, setSelectedNote }) => {
+const NotesList = ({ notes, setNotes, setSelectedNote }) => {
 
   const handleClick = (note) => {
     setSelectedNote(note)
@@ -11,6 +11,11 @@ const NotesList = ({ notes, setSelectedNote }) => {
     fetch(`http://localhost:9292/notes/${note.id}`, {
       method: "DELETE"
     })
+      .then(handleUpdateDestinationsList(note))
+  }
+
+  const handleUpdateDestinationsList = (note) => {
+    setNotes(notes.filter((n) => n != note))
   }
 
   const noteCards = notes.map(note => {
