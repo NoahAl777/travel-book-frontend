@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const NotesList = ({ notes, setNotes, setSelectedNote }) => {
+const NotesList = ({ notes, setNotes, destination, setSelectedNote }) => {
 
   const handleClick = (note) => {
     setSelectedNote(note)
@@ -11,14 +11,14 @@ const NotesList = ({ notes, setNotes, setSelectedNote }) => {
     fetch(`http://localhost:9292/notes/${note.id}`, {
       method: "DELETE"
     })
-      .then(handleUpdateDestinationsList(note))
+      .then(handleUpdateNotesList(note))
   }
 
-  const handleUpdateDestinationsList = (note) => {
+  const handleUpdateNotesList = (note) => {
     setNotes(notes.filter((n) => n != note))
   }
 
-  const noteCards = notes.map(note => {
+  const noteCards = notes.filter(note => note.destination_id == destination.id).map(note => {
     return (
       <div className="noteCard" key={note.id}>
         <h4>{`🙌${note.overall_rating} - Overall | 🥧${note.food_rating} - Food | 👮‍♂️${note.safety_rating} - Safety`}</h4>
