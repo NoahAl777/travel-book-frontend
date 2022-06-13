@@ -49,6 +49,7 @@ const EditDestinationsForm = ({ selectedDestination, destinations, setDestinatio
         }
       }))
       setErrors()
+      navigate("/")
     }
   }
 
