@@ -40,7 +40,7 @@ const DestinationsList = ({ destinations, setDestinations, setSelectedDestinatio
 
   return (
     <div className="DestinationsList">
-      <h2>DestinationsList Component</h2>
+      <h2>All My Destinations</h2>
       {destinationCards}
     </div>
   )
