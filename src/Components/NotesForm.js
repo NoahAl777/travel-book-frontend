@@ -27,12 +27,12 @@ const NotesForm = ({ destinations, setDestinations, notes, setNotes }) => {
     if (data.errors != undefined) {
       setErrors(data.errors)
     } else {
-      handleUpdateNotesList()
+      handleUpdateNotesList(data)
     }
   }
 
-  const handleUpdateNotesList = () => {
-    let newNote = { ...formData, destination_id: parseInt(params.destination_id) }
+  const handleUpdateNotesList = (data) => {
+    let newNote = { ...formData, destination_id: parseInt(params.destination_id), id: data.id }
     setNotes([...notes, newNote])
     setErrors()
     setFormData({ overall_rating: "", safety_rating: "", food_rating: "", must_do: "", additional_notes: "" })
