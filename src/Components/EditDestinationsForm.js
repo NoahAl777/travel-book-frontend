@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const EditDestinationsForm = ({ selectedDestination, destinations, setDestinations }) => {
   const params = useParams()
+  const navigate = useNavigate()
   const { id, country, state_province, city, zipcode, image } = selectedDestination
   const [formData, setFormData] = useState({ country: country, state_province: state_province, city: city, zipcode: zipcode, image: image })
   const [errors, setErrors] = useState([])
