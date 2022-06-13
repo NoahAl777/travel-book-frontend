@@ -53,27 +53,30 @@ const EditDestinationsForm = ({ selectedDestination, destinations, setDestinatio
   }
 
   return (
-    <div className="EditDestinationsForm">
-      <h4 style={{ color: 'red' }}>{errors}</h4>
-      <form onSubmit={handleSubmit}>
-        <label>Country:</label>
-        <input type="text" id="country" onChange={handleChange} value={formData.country}></input>
-        <br />
-        <label>City:</label>
-        <input type="text" id="city" onChange={handleChange} value={formData.city}></input>
-        <br />
-        <label>State/Province:</label>
-        <input type="text" id="state_province" onChange={handleChange} value={formData.state_province}></input>
-        <br />
-        <label>Zipcode:</label>
-        <input type="integer" id="zipcode" onChange={handleChange} value={formData.zipcode}></input>
-        <br />
-        <label>Image URL:</label>
-        <input type="text" id="image" onChange={handleChange} value={formData.image}></input>
-        <br />
-        <input type="submit"></input>
-      </form>
-    </div>
+    <>
+      <h2>Edit Destination</h2>
+      <div className="EditDestinationsForm">
+        <h4 style={{ color: 'red' }}>{errors}</h4>
+        <form onSubmit={handleSubmit}>
+          <label>Country:</label>
+          <input type="text" id="country" onChange={handleChange} value={formData.country}></input>
+          <br />
+          <label>City:</label>
+          <input type="text" id="city" onChange={handleChange} value={formData.city}></input>
+          <br />
+          <label>State/Province:</label>
+          <input type="text" id="state_province" onChange={handleChange} value={formData.state_province}></input>
+          <br />
+          <label>Zipcode:</label>
+          <input type="integer" id="zipcode" onChange={handleChange} value={formData.zipcode}></input>
+          <br />
+          <label>Image URL:</label>
+          <input type="text" id="image" onChange={handleChange} value={formData.image}></input>
+          <br />
+          <input type="submit"></input>
+        </form>
+      </div>
+    </>
   )
 };
 
