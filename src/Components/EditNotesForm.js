@@ -39,7 +39,6 @@ const EditNotesForm = ({ selectedNote, notes, setNotes }) => {
   const handleUpdateNotesList = (data) => {
     if (data.errors != undefined) {
       setErrors(data.errors)
-      console.log(data.errors)
     } else {
       setNotes(notes.map(note => {
         if (note.id == data.id) {

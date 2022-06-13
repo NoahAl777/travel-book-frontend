@@ -14,7 +14,7 @@ function App() {
   const [selectedDestination, setSelectedDestination] = useState([]);
   const [selectedNote, setSelectedNote] = useState([]);
   const [notes, setNotes] = useState([]);
-  console.log(notes)
+
   useEffect(() => {
     fetch("http://localhost:9292/destinations")
       .then(r => r.json())

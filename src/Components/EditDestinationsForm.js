@@ -39,7 +39,6 @@ const EditDestinationsForm = ({ selectedDestination, destinations, setDestinatio
   const handleUpdateDestinationsList = (data) => {
     if (data.errors != undefined) {
       setErrors(data.errors)
-      console.log(data.errors)
     } else {
       setDestinations(destinations.map(destination => {
         if (destination.id == data.id) {

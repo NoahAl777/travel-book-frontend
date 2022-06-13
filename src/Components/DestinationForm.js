@@ -12,7 +12,6 @@ const DestinationForm = ({ destinations, setDestinations }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(formData)
     fetch("http://localhost:9292/destinations", {
       method: "POST",
       headers: {
