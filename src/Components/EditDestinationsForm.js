@@ -5,6 +5,7 @@ const EditDestinationsForm = ({ selectedDestination }) => {
   const params = useParams()
   const { id, country, state_province, city, zipcode, image } = selectedDestination
   const [formData, setFormData] = useState({ country: country, state_province: state_province, city: city, zipcode: zipcode, image: image })
+  const [errors, setErrors] = useState([])
 
   useEffect(() => {
     if (selectedDestination == false) {
@@ -20,6 +21,7 @@ const EditDestinationsForm = ({ selectedDestination }) => {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value })
   }
+
   const handleSubmit = (event) => {
     event.preventDefault()
     fetch(`http://localhost:9292/destinations/${id}`, {
@@ -29,8 +31,18 @@ const EditDestinationsForm = ({ selectedDestination }) => {
       },
       body: JSON.stringify(formData)
     })
+      .then(r => r.json())
+      .then(data => handleUpdateDestinationsList(data))
   }
 
+  const handleUpdateDestinationsList = (data) => {
+    if (data.errors != undefined) {
+      setErrors(data.errors)
+      console.log(data.errors)
+    } else {
+      console.log("success!")
+    }
+  }
   return (
     <div className="EditDestinationsForm">
       <form onSubmit={handleSubmit}>

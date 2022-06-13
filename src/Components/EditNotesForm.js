@@ -30,6 +30,8 @@ const EditNotesForm = ({ selectedNote }) => {
       },
       body: JSON.stringify(formData)
     })
+      .then(r => r.json())
+      .then(data => console.log(data))
   }
 
   return (
