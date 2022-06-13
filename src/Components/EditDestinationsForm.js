@@ -40,9 +40,16 @@ const EditDestinationsForm = ({ selectedDestination, destinations, setDestinatio
       setErrors(data.errors)
       console.log(data.errors)
     } else {
-      console.log("success!")
+      setDestinations(destinations.map(destination => {
+        if (destination.id == data.id) {
+          return data
+        } else {
+          return destination
+        }
+      }))
     }
   }
+
   return (
     <div className="EditDestinationsForm">
       <form onSubmit={handleSubmit}>
