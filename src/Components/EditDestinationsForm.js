@@ -52,6 +52,7 @@ const EditDestinationsForm = ({ selectedDestination, destinations, setDestinatio
 
   return (
     <div className="EditDestinationsForm">
+      <h4 style={{ color: 'red' }}>{errors}</h4>
       <form onSubmit={handleSubmit}>
         <label>Country:</label>
         <input type="text" id="country" onChange={handleChange} value={formData.country}></input>
