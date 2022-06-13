@@ -47,6 +47,7 @@ const EditDestinationsForm = ({ selectedDestination, destinations, setDestinatio
           return destination
         }
       }))
+      setErrors()
     }
   }
 
