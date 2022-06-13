@@ -5,6 +5,7 @@ const EditNotesForm = ({ selectedNote }) => {
   const params = useParams();
   const { id, overall_rating, safety_rating, food_rating, must_do, additional_notes, destination_id } = selectedNote;
   const [formData, setFormData] = useState({ overall_rating: overall_rating, safety_rating: safety_rating, food_rating: food_rating, must_do: must_do, additional_notes: additional_notes });
+  const [errors, setErrors] = useState([])
 
   useEffect(() => {
     if (selectedNote == false) {
