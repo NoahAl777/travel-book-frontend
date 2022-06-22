@@ -1,6 +1,24 @@
-# Getting Started with Create React App
+# Travel Book - Front End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Get Started
+
+### Fork and clone:
+
+Back End: git@github.com:NoahAl777/travel-book.git
+Front End: git@github.com:NoahAl777/travel-book-frontend.git
+
+### Install dependecies from both repositories:
+
+Back End: bundle install
+Front End: bundle install
+
+### Start DB Server:
+
+Run command in back end terminal: bundle exec rake server
+
+### Start Front End:
+
+Run command in front end terminal: npm start
 
 ## Available Scripts
 
