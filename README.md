@@ -5,11 +5,13 @@
 ### Fork and clone:
 
 Back End: git@github.com:NoahAl777/travel-book.git
+
 Front End: git@github.com:NoahAl777/travel-book-frontend.git
 
 ### Install dependecies from both repositories:
 
 Back End: bundle install
+
 Front End: bundle install
 
 ### Start DB Server:
