@@ -1,9 +1,10 @@
 import React from 'react';
 
-const DestinationsIndex = () => {
-
+const DestinationsIndex = ({ destinations }) => {
   return (
-    <div className='DestinationsIndex'></div>
+    <div className='DestinationsIndex'>
+
+    </div>
   )
 };
 
