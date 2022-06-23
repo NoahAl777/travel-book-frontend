@@ -10,6 +10,7 @@ import NotesForm from './Components/NotesForm';
 import EditNotesForm from './Components/EditNotesForm';
 
 import DestinationsIndex from './Components/DestinationsIndex';
+import DestinationsShow from './Components/DestinationsShow';
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -34,6 +35,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<DestinationsIndex destinations={destinations} />} />
+        <Route path="/destinations/:id" element={<DestinationsShow />} />
         {/* <Route path="/" element={<DestinationsList destinations={destinations} setDestinations={setDestinations} setSelectedDestination={setSelectedDestination} setSelectedNote={setSelectedNote} notes={notes} setNotes={setNotes} />} /> */}
         <Route path="/destinations/new" element={<DestinationForm destinations={destinations} setDestinations={setDestinations} />} />
         <Route path="/destinations/:destination_id/edit" element={<EditDestinationsForm selectedDestination={selectedDestination} destinations={destinations} setDestinations={setDestinations} />} />
