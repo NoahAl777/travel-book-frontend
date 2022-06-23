@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import NotesList from "./NotesList";
 
-const DestinationsShow = ({ destinations, setDestinations, setNotes }) => {
+const DestinationsShow = ({ destinations, setDestinations, setNotes, setSelectedNote }) => {
   const params = useParams()
   const destinationToDisplay = destinations.filter(destination => destination.id == params.id)
   const { country, state_province, city, zipcode, created_at, image, notes } = destinationToDisplay[0]
@@ -30,7 +30,7 @@ const DestinationsShow = ({ destinations, setDestinations, setNotes }) => {
       <Link to={`/destinations/${params.id}/notes/new`}>
         <button>Add Note</button>
       </Link>
-      <NotesList notes={notes} setNotes={setNotes} />
+      <NotesList notes={notes} setNotes={setNotes} setSelectedNote={setSelectedNote} />
     </div>
   )
 };

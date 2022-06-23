@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 const EditNotesForm = ({ selectedNote, notes, setNotes }) => {
   const params = useParams();
+  console.log(params)
   const navigate = useNavigate();
   const { id, overall_rating, safety_rating, food_rating, must_do, additional_notes, destination_id } = selectedNote;
   const [formData, setFormData] = useState({ overall_rating: overall_rating, safety_rating: safety_rating, food_rating: food_rating, must_do: must_do, additional_notes: additional_notes });
@@ -10,6 +11,7 @@ const EditNotesForm = ({ selectedNote, notes, setNotes }) => {
 
   useEffect(() => {
     if (selectedNote == false) {
+      console.log("fetch")
       fetch(`http://localhost:9292/notes/${params.note_id}`)
         .then(r => r.json())
         .then(data => {

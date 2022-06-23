@@ -40,6 +40,7 @@ function App() {
             destinations={destinations}
             setDestinations={setDestinations}
             setNotes={setNotes}
+            setSelectedNote={setSelectedNote}
           />} />
         {/* <Route path="/" element={<DestinationsList destinations={destinations} setDestinations={setDestinations} setSelectedDestination={setSelectedDestination} setSelectedNote={setSelectedNote} notes={notes} setNotes={setNotes} />} /> */}
         <Route path="/destinations/new" element={<DestinationForm destinations={destinations} setDestinations={setDestinations} />} />
