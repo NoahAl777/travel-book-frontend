@@ -1,9 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const DestinationsShow = () => {
+const DestinationsShow = ({ destinations }) => {
   const params = useParams()
-  console.log(params)
+  const destinationToDisplay = destinations.filter(destination => destination.id == params.id)
+  console.log(destinationToDisplay)
   return (
     <div className='DestinationsShow'>
 

@@ -35,7 +35,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<DestinationsIndex destinations={destinations} />} />
-        <Route path="/destinations/:id" element={<DestinationsShow />} />
+        <Route path="/destinations/:id" element={<DestinationsShow destinations={destinations} />} />
         {/* <Route path="/" element={<DestinationsList destinations={destinations} setDestinations={setDestinations} setSelectedDestination={setSelectedDestination} setSelectedNote={setSelectedNote} notes={notes} setNotes={setNotes} />} /> */}
         <Route path="/destinations/new" element={<DestinationForm destinations={destinations} setDestinations={setDestinations} />} />
         <Route path="/destinations/:destination_id/edit" element={<EditDestinationsForm selectedDestination={selectedDestination} destinations={destinations} setDestinations={setDestinations} />} />
