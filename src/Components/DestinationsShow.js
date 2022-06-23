@@ -30,7 +30,7 @@ const DestinationsShow = ({ destinations, setDestinations, setNotes }) => {
       <Link to={`/destinations/${params.id}/notes/new`}>
         <button>Add Note</button>
       </Link>
-      {/* <NotesList notes={notes} setNotes={setNotes} /> */}
+      <NotesList notes={notes} setNotes={setNotes} />
     </div>
   )
 };

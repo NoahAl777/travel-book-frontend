@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const NotesList = ({ notes, setNotes, destination, setSelectedNote }) => {
 
+  console.log(notes)
   const handleClick = (note) => {
     setSelectedNote(note)
   }
@@ -18,7 +19,7 @@ const NotesList = ({ notes, setNotes, destination, setSelectedNote }) => {
     setNotes(notes.filter((n) => n != note))
   }
 
-  const noteCards = notes.filter(note => note.destination_id == destination.id).map(note => {
+  const noteCards = notes.map(note => {
     return (
       <div className="noteCard" key={note.id}>
         <h4>{`🙌${note.overall_rating} - Overall | 🥧${note.food_rating} - Food | 👮‍♂️${note.safety_rating} - Safety`}</h4>
