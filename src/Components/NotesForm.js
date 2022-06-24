@@ -5,7 +5,6 @@ const NotesForm = ({ destinations, setDestinations, notes, setNotes }) => {
   const navigate = useNavigate()
   const [errors, setErrors] = useState()
   const [formData, setFormData] = useState({ overall_rating: "", safety_rating: "", food_rating: "", must_do: "", additional_notes: "" })
-
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value })
   }
@@ -32,8 +31,18 @@ const NotesForm = ({ destinations, setDestinations, notes, setNotes }) => {
   }
 
   const handleUpdateNotesList = (data) => {
+    console.log("destinations", destinations)
     let newNote = { ...formData, destination_id: parseInt(params.destination_id), id: data.id }
-    setNotes([...notes, newNote])
+    setDestinations(destinations.map(d => {
+      if (d.id == data.destination_id) {
+        let newNotesList = [...d.notes, newNote]
+        let updatedDestination = { ...d, notes: newNotesList }
+        console.log("updated destination", updatedDestination)
+        return updatedDestination
+      } else {
+        return d
+      }
+    }))
     setErrors()
     setFormData({ overall_rating: "", safety_rating: "", food_rating: "", must_do: "", additional_notes: "" })
     navigate('/')

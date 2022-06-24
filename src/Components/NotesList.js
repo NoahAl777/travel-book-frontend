@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const NotesList = ({ notes, setNotes, destination, setSelectedNote }) => {
 
-  console.log(notes)
+  // console.log(notes)
   const handleClick = (note) => {
     console.log(note)
     setSelectedNote(note)
