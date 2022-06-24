@@ -9,7 +9,6 @@ const DestinationsList = ({ destinations, setDestinations, setSelectedDestinatio
   }
 
   const handleDelete = (destination) => {
-    console.log(destination)
     fetch(`http://localhost:9292/destinations/${destination.id}`, {
       method: "DELETE"
     })

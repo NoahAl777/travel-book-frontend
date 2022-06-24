@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 
 const EditNotesForm = ({ selectedNote, destinations, setDestinations, notes, setNotes }) => {
   const params = useParams();
-  console.log(params)
   const navigate = useNavigate();
   const { id, overall_rating, safety_rating, food_rating, must_do, additional_notes, destination_id } = selectedNote;
   const [formData, setFormData] = useState({ overall_rating: overall_rating, safety_rating: safety_rating, food_rating: food_rating, must_do: must_do, additional_notes: additional_notes });
