@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import NotesList from "./NotesList";
 //
 const DestinationsShow = ({ destinations, setDestinations, setSelectedNote }) => {
   const params = useParams()
-  // debugger
+  const navigate = useNavigate()
   const destinationToDisplay = destinations.filter(destination => destination.id == params.id)
   const [notes, setNotes] = useState(destinationToDisplay[0].notes)
   const { country, state_province, city, zipcode, created_at, image } = destinationToDisplay[0]
 
-  console.log(notes)
+  console.log(destinations)
   const handleDelete = () => {
     fetch(`http://localhost:9292/destinations/${params.id}`, {
       method: "DELETE"
@@ -19,6 +19,7 @@ const DestinationsShow = ({ destinations, setDestinations, setSelectedNote }) =>
 
   const handleUpdateDestinationsList = (paramsId) => {
     setDestinations(destinations.filter((d) => d.id != paramsId))
+    navigate("/")
   }
 
   return (
