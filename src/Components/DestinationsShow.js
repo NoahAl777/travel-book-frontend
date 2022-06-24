@@ -5,11 +5,12 @@ import NotesList from "./NotesList";
 const DestinationsShow = ({ destinations, setDestinations, setSelectedNote }) => {
   const params = useParams()
   const navigate = useNavigate()
+  // debugger
   const destinationToDisplay = destinations.filter(destination => destination.id == params.id)
   const [notes, setNotes] = useState(destinationToDisplay[0].notes)
   const { country, state_province, city, zipcode, created_at, image } = destinationToDisplay[0]
 
-  console.log(destinations)
+  // console.log(destinations)
   const handleDelete = () => {
     fetch(`http://localhost:9292/destinations/${params.id}`, {
       method: "DELETE"

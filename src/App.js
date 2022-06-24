@@ -30,6 +30,7 @@ function App() {
       .then(data => setNotes(data))
   }, []);
 
+  console.log("destinations", destinations)
   return (
     <div className="App">
       <NavBar />

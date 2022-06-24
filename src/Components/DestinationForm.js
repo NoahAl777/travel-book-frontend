@@ -27,7 +27,8 @@ const DestinationForm = ({ destinations, setDestinations }) => {
     if (data.errors != undefined) {
       setErrors(data.errors)
     } else {
-      let newDestination = { ...formData, id: data.id }
+      // debugger
+      let newDestination = { ...formData, id: data.id, notes: [] }
       setDestinations([...destinations, newDestination])
       setFormData({ country: "", state_province: "", city: "", zipcode: "", image: "" })
       setErrors()
