@@ -58,7 +58,6 @@ const EditNotesForm = ({ selectedNote, destinations, setDestinations, notes, set
             return note
           }
         })
-        // let updatedNotesList = [...d.notes, updatedNote]
         let updatedDestination = { ...d, notes: updatedNotesList }
         return updatedDestination
       } else {
@@ -66,7 +65,7 @@ const EditNotesForm = ({ selectedNote, destinations, setDestinations, notes, set
       }
     }))
     setErrors()
-    navigate("/")
+    navigate(`/destinations/${params.destination_id}`)
   }
 
 
