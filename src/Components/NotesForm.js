@@ -31,13 +31,11 @@ const NotesForm = ({ destinations, setDestinations, notes, setNotes }) => {
   }
 
   const handleUpdateNotesList = (data) => {
-    console.log("destinations", destinations)
     let newNote = { ...formData, destination_id: parseInt(params.destination_id), id: data.id }
     setDestinations(destinations.map(d => {
       if (d.id == data.destination_id) {
         let newNotesList = [...d.notes, newNote]
         let updatedDestination = { ...d, notes: newNotesList }
-        console.log("updated destination", updatedDestination)
         return updatedDestination
       } else {
         return d
