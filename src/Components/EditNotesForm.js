@@ -35,24 +35,30 @@ const EditNotesForm = ({ selectedNote, destinations, setDestinations, notes, set
       body: JSON.stringify(formData)
     })
       .then(r => r.json())
-      .then(data => handleUpdateNotesList(data))
+      .then(data => checkForErrors(data))
   }
 
-  const handleUpdateNotesList = (data) => {
+  const checkForErrors = (data) => {
     if (data.errors != undefined) {
       setErrors(data.errors)
     } else {
-      setNotes(notes.map(note => {
-        if (note.id == data.id) {
-          return data
-        } else {
-          return note
-        }
-      }))
-      setErrors()
-      navigate("/")
+      handleUpdateNotesList(data)
     }
   }
+
+  const handleUpdateNotesList = (data) => {
+    // setNotes(notes.map(note => {
+    //   if (note.id == data.id) {
+    //     return data
+    //   } else {
+    //     return note
+    //   }
+    // }))
+
+    setErrors()
+    navigate("/")
+  }
+
 
   return (
     <>
