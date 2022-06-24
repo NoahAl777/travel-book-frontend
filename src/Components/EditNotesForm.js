@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const EditNotesForm = ({ selectedNote, notes, setNotes }) => {
+const EditNotesForm = ({ selectedNote, destinations, setDestinations, notes, setNotes }) => {
   const params = useParams();
   console.log(params)
   const navigate = useNavigate();

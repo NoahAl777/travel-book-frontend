@@ -46,7 +46,7 @@ function App() {
         <Route path="/destinations/new" element={<DestinationForm destinations={destinations} setDestinations={setDestinations} />} />
         <Route path="/destinations/:destination_id/edit" element={<EditDestinationsForm selectedDestination={selectedDestination} destinations={destinations} setDestinations={setDestinations} />} />
         <Route path="/destinations/:destination_id/notes/new" element={<NotesForm destinations={destinations} setDestinations={setDestinations} notes={notes} setNotes={setNotes} />} />
-        <Route path="/destinations/:destination_id/notes/:note_id/edit" element={<EditNotesForm selectedNote={selectedNote} notes={notes} setNotes={setNotes} />} />
+        <Route path="/destinations/:destination_id/notes/:note_id/edit" element={<EditNotesForm selectedNote={selectedNote} destinations={destinations} setDestinations={setDestinations} notes={notes} setNotes={setNotes} />} />
       </Routes>
     </div>
   );
