@@ -25,7 +25,7 @@ const EditDestinationsForm = ({ selectedDestination, destinations, setDestinatio
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    fetch(`http://localhost:9292/destinations/${id}`, {
+    fetch(`http://localhost:9292/destinations/${params.destination_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
