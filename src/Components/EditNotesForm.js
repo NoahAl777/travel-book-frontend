@@ -47,14 +47,24 @@ const EditNotesForm = ({ selectedNote, destinations, setDestinations, notes, set
   }
 
   const handleUpdateNotesList = (data) => {
-    // setNotes(notes.map(note => {
-    //   if (note.id == data.id) {
-    //     return data
-    //   } else {
-    //     return note
-    //   }
-    // }))
-
+    let updatedNote = { ...formData, destination_id: parseInt(params.destination_id), id: data.id }
+    let updatedNotesList = []
+    setDestinations(destinations.map(d => {
+      if (d.id == data.destination_id) {
+        updatedNotesList = d.notes.map(note => {
+          if (note.id == params.note_id) {
+            return updatedNote
+          } else {
+            return note
+          }
+        })
+        // let updatedNotesList = [...d.notes, updatedNote]
+        let updatedDestination = { ...d, notes: updatedNotesList }
+        return updatedDestination
+      } else {
+        return d
+      }
+    }))
     setErrors()
     navigate("/")
   }
