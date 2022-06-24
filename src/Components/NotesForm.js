@@ -45,7 +45,7 @@ const NotesForm = ({ destinations, setDestinations, notes, setNotes }) => {
     }))
     setErrors()
     setFormData({ overall_rating: "", safety_rating: "", food_rating: "", must_do: "", additional_notes: "" })
-    navigate('/')
+    navigate(`/destinations/${params.destination_id}`)
   }
 
   return (
